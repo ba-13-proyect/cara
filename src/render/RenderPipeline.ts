@@ -1,4 +1,4 @@
-//--- hex-eyes-engine/src/render/RenderPipeline.ts 
+//--- hex-eyes-engine/src/render/RenderPipeline.ts
 /**
  * RenderPipeline.ts — Orquestador de capas de renderizado
  *
@@ -39,19 +39,10 @@ export class RenderPipeline {
     this.lineCtx = cfg.lineCtx;
     this.config = cfg.config;
 
-    // Inicializa capas con configuración
-    this.gridLayer = new GridLayer({
-      showDebugBounds: false
-    });
-
-    this.satelliteLayer = new SatelliteLayer({
-      fontSize: 14,
-      fontFamily: 'system-ui, sans-serif'
-    });
-
-    this.lineLayer = new LineLayer({
-      showAllConnections: false
-    });
+    // Inicializa capas sin configuración (usan defaults internos)
+    this.gridLayer = new GridLayer();
+    this.satelliteLayer = new SatelliteLayer();
+    this.lineLayer = new LineLayer();
   }
 
   /**

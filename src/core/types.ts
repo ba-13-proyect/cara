@@ -74,7 +74,10 @@ export interface CellPlacement extends OffsetCoord {
 export interface FrameData {
   cells: CellPlacement[];
   eyeStates: Map<string, EyeVisualState>; // key: "col,row"
+  cellContours?: Map<string, CubicBezier[]>; // key: "col,row"
   cursorScreenPos: Vec2 | null;
+  cameraOffset?: Vec2;
+  cameraZoom?: number;
 }
 
 /**

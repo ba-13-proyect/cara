@@ -1,3 +1,4 @@
+//+++ eye-ingeniere/src/state/CameraState.ts
 //--- hex-eyes-engine/src/state/CameraState.ts
 /**
  * CameraState — Estado encapsulado de la cámara
@@ -43,6 +44,10 @@ export class CameraState {
    */
   get zoom(): number {
     return this._zoom;
+  }
+
+  set zoom(value: number) {
+    this._zoom = Math.max(0.1, Math.min(3.0, value));
   }
 
   /**
